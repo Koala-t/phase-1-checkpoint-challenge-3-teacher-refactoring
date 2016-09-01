@@ -21,4 +21,43 @@ class Employee
   def receive_raise(raise)
     @salary += raise
   end
+
+  def teach_stuff
+    if self.class == Teacher
+      response = ""
+      response += "Listen, class, this is how everything works, fo SHO! "
+      response += "*drops flat-out insane knowledge bomb* "
+      response += "... You're welcome. *saunters away*"
+      response
+    else
+      response = ""
+      response += "Listen, class, this is how everything works. "
+      response += "*drops crazy knowledge bomb* "
+      response += "... You're welcome."
+      response
+    end
+  end
+
+  def set_performance_rating(rating)
+    if self.class == Teacher
+      response = ""
+        if rating > 90
+          receive_raise(@target_raise)
+          response = "Yay, I'm a great employee!"
+        else
+          response += "Oh, well -- thanks to this actionable, specific, and kind "
+          response += "feedback, I'll do better next time."
+        end
+        response
+    else
+      response = ""
+      if rating > 80
+        response = "Yay, I'm a great employee!"
+        receive_raise(@target_raise)
+      else
+        response = "Oh, well -- thanks to this actionable, specific, and kind feedback, I'll do better next time."
+      end
+      response
+    end
+  end
 end
