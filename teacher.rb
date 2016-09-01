@@ -1,13 +1,12 @@
 require_relative 'hifive'
-require_relative 'person'
+require_relative 'employee'
 
-class Teacher < Person
+class Teacher < Employee
   include HiFive
-  attr_reader :salary, :phase, :performance_rating, :target_raise
+  attr_reader :salary, :performance_rating, :target_raise
 
   def initialize(options={})
     super
-    @phase = 3
     @target_raise = 1000
   end
 

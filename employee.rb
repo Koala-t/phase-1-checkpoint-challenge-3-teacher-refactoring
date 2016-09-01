@@ -1,10 +1,11 @@
-class Person
-  attr_reader :age
+class Employee
+  attr_reader :age, :phase
   attr_accessor :name
-  
+
   def initialize(args = {})
     @name = args.fetch(:name, "")
     @age = args.fetch(:age, 0)
+    @phase = 3
   end
 
   def set_phase(num)
